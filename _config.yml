@@ -1,4 +1,4 @@
-title: Nexus Sonatype Repository - Docker Image
+title: Nexus Sonatype OSS - Docker Image
 description: Nexus Repository OSS Sonatype (s6-overlay) Docker Image - Extends frekele/debian.
 google_analytics: 
 show_downloads: true
