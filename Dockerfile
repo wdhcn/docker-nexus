@@ -1,6 +1,6 @@
 FROM frekele/java:jdk8
 
-MAINTAINER frekele <leandro.freitas@softdevelop.com.br>
+MAINTAINER test-nexus 
 
 ENV NEXUS_VERSION=3.2.1-01
 ENV NEXUS_HOME=/opt/sonatype/nexus
@@ -46,7 +46,8 @@ RUN touch ${NEXUS_HOME}/etc/karaf/org.apache.karaf.command.acl.feature.cfg \
   && touch ${NEXUS_HOME}/etc/karaf/org.apache.karaf.command.acl.jaas.cfg
 
 # Create nexus user with UID 200
-RUN useradd -r -u 200 -m -c "nexus role account" -d ${NEXUS_DATA} -s /bin/false nexus
+#RUN useradd -r -u 200 -m -c "nexus role account" -d ${NEXUS_DATA} -s /bin/false nexus
+RUN chmod -R 777 ${NEXUS_DATA}
 
 # Add Volume
 VOLUME ${NEXUS_DATA}
